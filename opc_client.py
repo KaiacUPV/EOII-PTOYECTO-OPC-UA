@@ -24,6 +24,7 @@ class OPCClientThread(Thread):
 
         while not self.shared.stop_event.is_set():
             try:
+                print("Intentando conectar a:", self.endpoint)
                 with Client(self.endpoint) as client:
                     logger.info("Cliente OPC-UA conectado a %s", self.endpoint)
 

@@ -9,7 +9,7 @@ from opc_server import OPCServerThread
 from udp_bridge import UDPBridgeThread
 
 # Endpoints
-OPC_SOURCE_ENDPOINT = "opc.tcp://DESKTOP-DHM89GC:53530/OPCUA/SimulationServer/"
+OPC_SOURCE_ENDPOINT = "opc.tcp://DESKTOP-DHM89GC:53530/OPCUA/SimulationServer"
 OPC_SERVER_ENDPOINT = "opc.tcp://localhost:4841/freeopcua/python_bridge/"
 OPC_SERVER_NAMESPACE = "http://localhost/pythonbridge"
 
