@@ -4,6 +4,9 @@ import logging
 from threading import Thread
 from asyncua.sync import Server
 from shared import SharedData
+logging.getLogger("asyncua.server").setLevel(logging.ERROR)
+logging.getLogger("asyncua.uaprotocol").setLevel(logging.ERROR)
+logging.getLogger("asyncua.server.address_space").setLevel(logging.ERROR)
 
 logger = logging.getLogger("opc_server")
 
@@ -27,6 +30,10 @@ class OPCServerThread(Thread):
         server = Server()
         server.set_endpoint(self.endpoint)
         idx = server.register_namespace(self.namespace_uri)
+        
+        #server.init()
+
+
         # crear objeto y variable
         myobj = server.nodes.objects.add_object(idx, "PythonBridge")
         self.seno_node = myobj.add_variable(idx, self.var_name, 0.0)

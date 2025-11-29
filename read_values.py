@@ -1,11 +1,11 @@
 from asyncua.sync import Client
 
-endpoint = "opc.tcp://DESKTOP-DHM89GC:53530/OPCUA/SimulationServer"
+endpoint = "opc.tcp://RedMi_LZH:53530/OPCUA/SimulationServer"
 
 # NodeIds reales del Prosys Simulation Server
-NODE_COUNTER = "ns=3;i=1002"
-NODE_RANDOM = "ns=3;i=1003"
-NODE_SINUS = "ns=3;i=1005"
+NODE_COUNTER = "ns=3;i=1001"
+NODE_RANDOM = "ns=3;i=1002"
+NODE_SINUS = "ns=3;i=1004"
 
 with Client(endpoint) as client:
     print("Conectado correctamente.\n")

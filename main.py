@@ -8,19 +8,27 @@ from opc_client import OPCClientThread
 from opc_server import OPCServerThread
 from udp_bridge import UDPBridgeThread
 
+
+
+logging.getLogger("asyncua").setLevel(logging.ERROR)
+logging.getLogger("asyncua.client").setLevel(logging.ERROR)
+logging.getLogger("asyncua.server").setLevel(logging.ERROR)
+logging.getLogger("asyncua.common").setLevel(logging.ERROR)
+logging.getLogger("asyncua.ua").setLevel(logging.ERROR)
+
 # Endpoints
-OPC_SOURCE_ENDPOINT = "opc.tcp://DESKTOP-DHM89GC:53530/OPCUA/SimulationServer"
+OPC_SOURCE_ENDPOINT = "opc.tcp://RedMi_LZH:53530/OPCUA/SimulationServer"
 OPC_SERVER_ENDPOINT = "opc.tcp://localhost:4841/freeopcua/python_bridge/"
 OPC_SERVER_NAMESPACE = "http://localhost/pythonbridge"
 
 UDP_TARGET_HOST = "127.0.0.1"
 UDP_TARGET_PORT = 9000
 
-# NodeIds directos del Prosys Simulation Server
+# NodeIds directos del Prosys Simulation Server Mirar la configuración del servidor
 NODE_IDS = {
-    "counter": "ns=3;i=1002",
-    "random": "ns=3;i=1003",
-    "senoidal": "ns=3;i=1005"
+    "counter": "ns=3;i=1001",
+    "random": "ns=3;i=1002",
+    "senoidal": "ns=3;i=1004"
 }
 
 def setup_logging():

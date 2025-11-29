@@ -5,6 +5,9 @@ from threading import Thread
 from asyncua.sync import Client
 from shared import SharedData
 
+logging.getLogger("asyncua.server").setLevel(logging.ERROR)
+logging.getLogger("asyncua.server.address_space").setLevel(logging.ERROR)
+logging.getLogger("asyncua.client.ua_client").setLevel(logging.WARNING)
 logger = logging.getLogger("opc_client")
 
 class OPCClientThread(Thread):
